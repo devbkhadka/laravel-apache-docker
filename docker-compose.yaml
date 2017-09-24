@@ -1,0 +1,37 @@
+version: "3"
+services:
+  database:
+    image: mysql:5.6
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      - "MYSQL_DATABASE=homestead"
+      - "MYSQL_USER=homestead"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_ROOT_PASSWORD=secret"
+    ports:
+        - "33061:3306"
+    networks:
+      - webnet
+  web:
+    # replace username/repo:tag with your name and image details
+    image: laravelapache
+    deploy:
+      replicas: 1
+      #restart_policy:
+        #condition: on-failure
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 2048M
+    volumes:
+      - "/Volumes/Projects/Docker/LaravelApache/project:/var/www/html/project"
+    ports:
+      - "80:80"
+      - "2222:22"
+    networks:
+      - webnet
+volumes:
+  dbdata:
+networks:
+  webnet:
