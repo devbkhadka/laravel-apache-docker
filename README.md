@@ -10,19 +10,20 @@ This project is for creating docker image to run laravel project, it has followi
 * It also install node dependencies
 * It runs migration to create database
 
-##Steps to use
+## Steps to use
 * Pull this project in your working directory
 * If you already have laravel project, copy content of your laravel project to "project" folder. After copying, structure of project folder should look like
-  project
-  |--app<br>
-  |--bootstrap
-  |--config
-  |--database
-  |--...
-  |--...
-  |--.env
-  |--composer.json
-  |--...
+ <br>project
+  <br>|--app
+  <br>|--bootstrap
+  <br>|--config
+  <br>|--database
+  <br>|--...
+  <br>|--...
+  <br>|--.env
+  <br>|--composer.json
+  <br>|--...
  * Open terminal and CD to "laravelapache-docker" folder or root of this project
  * Run following command to build a docker image
+ ''' docker build -t laravelapache .
  
