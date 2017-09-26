@@ -42,3 +42,7 @@ chmod -R 777 /var/www/html/project/storage;
 #We do this in the forground so that Docker can watch
 #the process to detect if it has crashed
 apache2 -DFOREGROUND;
+
+echo "Apache server is running ..., browser your project using 'localhost' ";
+
+
