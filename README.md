@@ -50,7 +50,7 @@ https://docs.docker.com/engine/installation/
  ```
    docker service logs --follow laravel_web
  ```
-
+* After necessary scripts are run you will see message like "Apache server is running ..., browser your project using 'localhost'". Now you can browse your project using localhost.
 
 ## SSH connect inside laravel_web service
 * Make sure docker container is running
