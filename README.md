@@ -46,7 +46,7 @@ https://docs.docker.com/engine/installation/
  ```
    docker stack deploy -c docker-compose.yaml laravel
  ```
-* The above command will run the services defined in docker-composer.yaml. For first time it may take up to an hour initialize the project and install the dependencies. To see the terminal output of whats happening run following command which will show terminal output of "laravel_web" service in docker
+* The above command will run the services defined in docker-composer.yaml. For first time it may take up to an hour to initialize the project and install the dependencies. To see the terminal output of container run following command in different terminal window, which will show terminal output of "laravel_web" service in docker
  ```
    docker service logs --follow laravel_web
  ```
