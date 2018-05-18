@@ -20,7 +20,7 @@ https://docs.docker.com/engine/installation/
 ## Steps to use
 * Pull this project in your working directory
 * Notice files "id_rsa" and "id_rsa.pub" there are private and public key used for SSH connection to server. "id_rsa.pub" will be copied to docker container and "id_rsa" will be used to do SSH connect. You can replace it with your key pair before building docker image to use your key pair.
-* If you already have laravel project, copy content of your laravel project to "project" folder. After copying, structure of project folder should look like
+* Leave this step if you want to create new laravel project. If you already have laravel project, copy content of your laravel project to "project" folder. After copying, structure of project folder should look like
  ```
  project
   |--app
