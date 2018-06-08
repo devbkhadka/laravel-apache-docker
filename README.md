@@ -63,7 +63,7 @@ https://docs.docker.com/engine/installation/
 
 * Run following command to unload the services
 ```
-   docker-compose up
+   docker-compose down
 ```
 
 
