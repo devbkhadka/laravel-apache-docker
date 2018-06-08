@@ -35,8 +35,19 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 
 ADD entrypoint.sh /root/entrypoint.sh
 RUN chmod 777 /root/entrypoint.sh
-ENTRYPOINT /root/entrypoint.sh
+
+ARG BUILD_TYPE=PROD
+ARG PROJECT_DIR=project
+
+ENV BUILD_TYPE $BUILD_TYPE
 
 
+#RUN if [ $BUILD_TYPE="PROD" ]; then echo "project.conf"; LARAVEL_PROJECT_DIR="project.conf"; else echo "project"; LARAVEL_PROJECT_DIR="project"; fi 
+
+RUN echo $PROJECT_DIR
+
+ADD $PROJECT_DIR /var/www/html/project
+
+ENTRYPOINT [ "/bin/bash", "/root/entrypoint.sh", "entrypoint" ]
 
 EXPOSE 80
