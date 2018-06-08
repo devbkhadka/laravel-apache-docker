@@ -33,24 +33,23 @@ https://docs.docker.com/engine/installation/
   |--composer.json
   |--...
   ```
+* Now seup the database configuration in ".env" file following setting. 
+```
+   hostname = database #Service name of mysql container in docker-compose.yaml
+   username = homestead #See docker-compose.yaml
+   password = secret #See docker-compose.yaml
+ ```
 * Open terminal and CD to "laravelapache-docker" folder or root of this project
 * Run following command to build a docker image, note that "laravelapache" in image name used in docker-compose.yaml file
  ```
    docker build -t laravelapache .
  ```
-* Run following command to initialize a docker swarm with your system and master node
- ```
-   docker swarm init
- ```
 * Now run following command to deploy services defined on docker-composer.yaml file
  ```
-   docker stack deploy -c docker-compose.yaml laravel
+   docker-compose up
  ```
-* The above command will run the services defined in docker-composer.yaml. For first time it may take up to an hour to initialize the project and install the dependencies. To see the terminal output of container run following command in different terminal window, which will show terminal output of "laravel_web" service in docker
- ```
-   docker service logs --follow laravel_web
- ```
-* After necessary scripts are run you will see message like "Apache server is running ..., browser your project using 'localhost'". Now you can browse your project using localhost.
+* The above command will run the services defined in "docker-composer.yaml". For first time it may take up to an hour to initialize the project, install the dependencies and run migrations. You can see progress in the terminal window.
+* After necessary scripts are run you will see message saying "Apache server is running ..., browser your project using 'localhost'". Now you can browse your project using localhost.
 
 ## SSH connect inside laravel_web service
 * Make sure docker container is running
@@ -60,11 +59,11 @@ https://docs.docker.com/engine/installation/
    ssh -p 2222 -i id_rsa root@localhost
 ```
 ## Stop and restart services
-* To stop run 
+* To stop running services press keys ctrl + C
+
+* Run following command to unload the services
 ```
-   docker stack rm laravel
+   docker-compose up
 ```
-* To run the services again run following command, no need to build docker image again
-```
-   docker stack deploy -c docker-compose.yaml laravel
- ```
+
+
