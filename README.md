@@ -1,4 +1,4 @@
-# laravelapache-docker
+# laravel-apache-docker
 
 **NOTE: This project is only suitable for development environment**
 
