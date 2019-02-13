@@ -1,4 +1,4 @@
-FROM ubuntuwithssh:1.0.2
+FROM devkhadka/ubuntuwithssh:1.0.2
 
 #update package database 
 #install php and php extensions required by laravel
