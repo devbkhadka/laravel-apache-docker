@@ -19,6 +19,9 @@ https://docs.docker.com/engine/installation/
 
 ## Steps to use
 * git pull this project in your working directory
+ ```
+ git clone https://github.com/devbkhadka/laravel-apache-docker.git .
+ ```
 * Notice files "id_rsa" and "id_rsa.pub", they are private and public keys that will be used to do SSH connection to the container. "id_rsa.pub" will be copied to docker container and "id_rsa" will be used in your shell to do SSH connection. If you want to use your own key pair, you can replace it with your key pair before building docker image.
 * Leave this step if you want to create new laravel project. If you already have laravel project, copy content of your laravel project to "project" folder. After copying, structure of project folder should look like
  ```
@@ -39,8 +42,11 @@ https://docs.docker.com/engine/installation/
    username = homestead #See docker-compose.yaml
    password = secret #See docker-compose.yaml
  ```
-* Open terminal (shell) and CD to "laravel-apache-docker" folder or root of this project
-* Run following command to build a docker image, note that "laravelapache" is the image name used in docker-compose.yaml file
+* Open terminal (shell) and generate key pair for ssh access
+ ```
+ ssh-keygen -t rsa -b 4096 -f "id_rsa"
+ ```
+* t Run following command to build a docker image, note that "laravelapache" is the image name used in docker-compose.yaml file
  ```
    docker build -t laravelapache .
  ```
